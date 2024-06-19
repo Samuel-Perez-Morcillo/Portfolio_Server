@@ -1,7 +1,5 @@
-const router = require("express").Router();
+module.exports = app => {
 
-router.get("/", (req, res, next) => {
-  res.json("All good in here");
-});
-
-module.exports = router;
+  const LanguageRouter = require('./languages.routes')
+  app.use('/api/languagues', LanguageRouter)
+}
