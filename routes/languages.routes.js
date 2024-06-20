@@ -11,12 +11,11 @@ router.post("/", (req, res, next) => {
 })
 
 router.get("/", (req, res, next) => {
-    res.send("HOLAA")
 
-    // Languages
-    //     .find()
-    //     .then(allLanguages => res.json(allLanguages))
-    //     .catch(err => next(err))
+    Languages
+        .find()
+        .then(allLanguages => res.json(allLanguages))
+        .catch(err => next(err))
 })
 
 module.exports = router
