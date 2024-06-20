@@ -1,18 +1,18 @@
 const router = require("express").Router()
-const StudyCenter = require("../models/StudyCenter.model")
+const StudyCenters = require("../models/StudyCenter.model")
 
 router.post("/", (req, res, next) => {
-    const { name, description, imageUrl, location } = req.body
+    const { name, formation, description, imageUrl, location } = req.body
 
-    StudyCenter
-        .create({ name, description, imageUrl, location })
+    StudyCenters
+        .create({ name, formation, description, imageUrl, location })
         .then(newStudyCenter => res.status(201).json(newStudyCenter))
         .catch(err => next(err))
 })
 
 router.get("/", (req, res, next) => {
 
-    StudyCenter
+    StudyCenters
         .find()
         .then(allStudyCenter => res.status(201).json(allStudyCenter))
         .catch(err => next(err))

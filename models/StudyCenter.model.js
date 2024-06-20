@@ -5,6 +5,10 @@ const studyCenterSchema = new Schema({
         type: String
     },
 
+    formation: {
+        type: String
+    },
+
     description: {
         type: String
     },
